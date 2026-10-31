@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Réussite Examens Haïti</title>
+<style>
+:root{--bg:#F5F6FA;--card:#fff;--ink:#0E1F3D;--mute:#5B6783;--line:#DDE2EE;--blue:#12327A;--red:#C8102E;--ok:#157A4B;--okbg:#E3F4EA;--bad:#B42318;--badbg:#FCE8E6;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1226;--card:#141D38;--ink:#EEF1FA;--mute:#9AA6C4;--line:#26325A;--blue:#7FA2FF;--red:#FF5A72;--ok:#4ADE9A;--okbg:#0F3324;--bad:#FF8A80;--badbg:#3A1618;--on:#0B1226}}
+:root[data-theme="dark"]{--bg:#0B1226;--card:#141D38;--ink:#EEF1FA;--mute:#9AA6C4;--line:#26325A;--blue:#7FA2FF;--red:#FF5A72;--ok:#4ADE9A;--okbg:#0F3324;--bad:#FF8A80;--badbg:#3A1618;--on:#0B1226}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100%}
+main{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0}
+h1{font-size:30px}h2{font-size:22px}h3{font-size:18px}
+p{margin:0}.mute{color:var(--mute)}.sm{font-size:14px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.flag{width:28px;height:20px;border-radius:3px;background:linear-gradient(#12327A 50%,#C8102E 50%)}
+.pill{font-size:13px;font-weight:600;padding:4px 10px;border-radius:99px;background:var(--okbg);color:var(--ok)}
+.hero{padding:6px 0 18px}.hero p{margin-top:8px;color:var(--mute)}
+.lv{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--blue);border-radius:12px;padding:16px;margin-bottom:12px;color:inherit;font:inherit;cursor:pointer}
+.lv:nth-of-type(2){border-left-color:var(--red)}.lv:nth-of-type(3){border-left-color:var(--ink)}
+.lv b{font-family:Georgia,serif;font-size:20px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bar{height:6px;border-radius:9px;background:var(--line);margin-top:10px;overflow:hidden}.bar i{display:block;height:100%;background:var(--blue)}
+.btn{display:block;width:100%;border:0;border-radius:10px;padding:14px;font:inherit;font-weight:700;background:var(--blue);color:var(--on);cursor:pointer;text-align:center;text-decoration:none}
+.btn.red{background:var(--red);color:#fff}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn+.btn{margin-top:10px}
+.promo{background:var(--blue);color:var(--on);border-radius:12px;padding:16px;margin:6px 0 18px}
+.promo .btn{background:var(--card);color:var(--ink);margin-top:12px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-top:10px;font:inherit;color:inherit;cursor:pointer}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}.opt.no{background:var(--badbg);border-color:var(--bad)}
+.exp{margin-top:14px;padding:14px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.q{font-family:Georgia,serif;font-size:21px;line-height:1.35;margin:10px 0 4px}
+.tag{font-size:13px;color:var(--mute);font-weight:600}
+.score{font-family:Georgia,serif;font-size:64px;line-height:1;margin:14px 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+ol{padding-left:20px;margin:10px 0}li{margin-bottom:8px}
+input{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;margin:8px 0}
+.err{color:var(--bad);font-size:14px;min-height:20px}
+a.back,button.back{background:none;border:0;color:var(--mute);font:inherit;padding:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.lock{opacity:.9}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+// Format : [matière, question, [options], index bonne réponse, explication]. Les 6 premières de chaque niveau sont gratuites.
+var FREE=6, PRICE="2 500 gourdes", WA="50932872479", MONCASH="38 65 30 84", NATCASH="41 85 87 18", NAME="Marius Stanley";
+var L={"9e":{"n":"9e AF","d":"Fin du cycle fondamental","q":[["Histoire","En quelle année Haïti a-t-elle proclamé son indépendance ?",["1915","1804","1825","1791"],1,"L’indépendance a été proclamée le 1er janvier 1804, aux Gonaïves, par Dessalines."],["Mathématiques","Résous : 2x + 6 = 14",["x = 5","x = 4","x = 3","x = 10"],1,"2x = 14 − 6 = 8, donc x = 4."],["Français","Quel est le pluriel de « cheval » ?",["chevaux","chevales","chevals","chevauxs"],0,"Les noms en -al font leur pluriel en -aux : cheval → chevaux."],["Géographie","Quel est le plus haut sommet d’Haïti ?",["Pic la Selle","Pic Macaya","Morne Cabrit","Citadelle"],0,"Le Pic la Selle, environ 2 680 m, est le point culminant d’Haïti."],["Sciences","Quel gaz les plantes absorbent-elles pour la photosynthèse ?",["Gaz carbonique (CO₂)","Oxygène","Hydrogène","Azote"],0,"Avec la lumière et l’eau, elles transforment le CO₂ en sucres et rejettent de l’oxygène."],["Mathématiques","Quelle est l’aire d’un rectangle de 8 cm sur 5 cm ?",["26 cm²","13 cm²","80 cm²","40 cm²"],3,"Aire = longueur × largeur = 8 × 5 = 40 cm²."]]},"rheto":{"n":"Rhéto","d":"Classe de rhétorique","q":[["Littérature","Qui a écrit « Gouverneurs de la rosée » ?",["Frankétienne","Jacques Stephen Alexis","Jacques Roumain","Jean Price-Mars"],2,"Roman de Jacques Roumain (1944), sur la solidarité paysanne autour de l’eau."],["Histoire","En quelle année l’occupation américaine d’Haïti a-t-elle commencé ?",["1934","1957","1804","1915"],3,"Les Marines débarquent en 1915 ; l’occupation prend fin en 1934."],["Mathématiques","Quelles sont les solutions de x² − 5x + 6 = 0 ?",["1 et 6","2 et 3","−1 et 6","−2 et −3"],1,"x² − 5x + 6 = (x − 2)(x − 3), donc x = 2 ou x = 3."],["Physique","Quelle est l’unité de force dans le Système international ?",["Joule","Newton","Pascal","Watt"],1,"La force se mesure en newtons (N)."],["Français","« Ce bébé est un ange » : quelle figure de style ?",["Comparaison","Métaphore","Hyperbole","Antithèse"],1,"Comparaison sans outil comparatif (comme, tel) : c’est une métaphore."],["Chimie","Quel est le symbole chimique du sodium ?",["S","Sd","Na","So"],2,"Na vient du latin natrium."]]},"philo":{"n":"Philo","d":"Terminale, classe de philosophie","q":[["Philosophie","Qui a écrit « Je pense, donc je suis » ?",["Kant","Descartes","Sartre","Platon"],1,"C’est le cogito de René Descartes, point de départ de sa méthode."],["Mathématiques","Quelle est la dérivée de f(x) = x³ ?",["x²","3x²","3x","x⁴/4"],1,"(xⁿ)′ = n·xⁿ⁻¹, donc (x³)′ = 3x²."],["SVT","Quel organite est le siège de la photosynthèse ?",["Mitochondrie","Chloroplaste","Ribosome","Noyau"],1,"Les chloroplastes contiennent la chlorophylle qui capte la lumière."],["Physique","Quelle est la loi d’Ohm ?",["P = U ÷ I","U = R × I","I = U × R","U = R ÷ I"],1,"Tension (V) = résistance (Ω) × intensité (A)."],["Histoire","En quelle année François Duvalier arrive-t-il au pouvoir ?",["1971","1946","1957","1986"],2,"Élu en 1957, il instaure une dictature qui dure jusqu’en 1986 avec son fils."],["Philosophie","Qui est l’auteur du « Contrat social » ?",["Locke","Voltaire","Rousseau","Montesquieu"],2,"Jean-Jacques Rousseau, 1762."]]}};
+var TOT={"9e":{"Histoire":22,"Mathématiques":44,"Français":32,"Géographie":23,"Sciences":39},"rheto":{"Littérature":49,"Histoire":47,"Mathématiques":42,"Physique":42,"Français":41,"Chimie":42},"philo":{"Philosophie":42,"Mathématiques":48,"SVT":42,"Physique":37,"Histoire":48,"Chimie":41,"Français":40}};
+var PQ={};
+var S={v:"home",k:null,i:0,sc:0,a:null,list:[],pro:false,best:{},pmsg:""};
+function ld(){try{S.pro=localStorage.getItem("eh_pro")==="1";S.best=JSON.parse(localStorage.getItem("eh_best")||"{}")}catch(e){}}
+function sv(){try{localStorage.setItem("eh_pro",S.pro?"1":"0");localStorage.setItem("eh_best",JSON.stringify(S.best))}catch(e){}}
+function go(v,k){S.v=v;if(k)S.k=k;draw();window.scrollTo(0,0)}
+function qs(k){return S.pro?L[k].q.concat(PQ[k]||[]):L[k].q}
+function tot(k){var n=0;for(var s in TOT[k])n+=TOT[k][s];return n}
+function subs(k){var m={};L[k].q.forEach(function(q){var o=m[q[0]]||(m[q[0]]={t:0,f:0});o.f++});for(var s in TOT[k]){var o=m[s]||(m[s]={t:0,f:0});o.t=TOT[k][s]}return m}
+function start(k,s){S.k=k;S.s=s||"";S.list=qs(k).filter(function(q){return !s||q[0]===s});if(!S.list.length){go("pay");return}S.i=0;S.sc=0;S.a=null;go("quiz")}
+function pick(n){if(S.a!==null)return;S.a=n;if(n===S.list[S.i][3])S.sc++;draw()}
+function next(){if(S.i+1<S.list.length){S.i++;S.a=null;draw()}else{var p=Math.round(S.sc/S.list.length*100);if(p>(S.best[S.k]||0)){S.best[S.k]=p;sv()}go("res")}}
+var API="https://script.google.com/macros/s/AKfycbw9STk5VnNjrkkq1ivCNkcpXxtPdP99flIclS59hp0mAu3FOM-ifYjidjksPkPG5QQ/exec";
+function ldq(){try{PQ=JSON.parse(localStorage.getItem("eh_q")||"{}")}catch(e){PQ={}}}
+function fetchQ(cb){var c=null;try{c=localStorage.getItem("eh_code")}catch(e){}if(!API||!c){if(cb)cb();return}
+fetch(API+"?action=questions&code="+encodeURIComponent(c)+"&device="+encodeURIComponent(dev())).then(function(r){return r.json()}).then(function(j){if(j.ok){PQ=j.q;try{localStorage.setItem("eh_q",JSON.stringify(PQ))}catch(e){}}else if(j.error==="revoked"||j.error==="invalid"){S.pro=false;PQ={};try{localStorage.removeItem("eh_q");localStorage.removeItem("eh_code")}catch(e){}sv();draw()}if(cb)cb()}).catch(function(){if(cb)cb()})}
+var MSG={invalid:"Code incorrect. Vérifiez le code reçu par WhatsApp.",limit:"Ce code est déjà utilisé sur 2 appareils. Contactez le vendeur.",revoked:"Ce code a été désactivé. Contactez le vendeur."};
+function dev(){try{var d=localStorage.getItem("eh_dev");if(!d){d=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem("eh_dev",d)}return d}catch(e){return "x"+Math.random().toString(36).slice(2)}}
+function unlock(){var e=document.getElementById("err"),b=document.getElementById("go"),v=document.getElementById("code").value.trim().toUpperCase().replace(/\s/g,"");
+if(!API){e.textContent="Application non configurée : adresse du serveur manquante.";return}
+if(!v){e.textContent="Saisis ton code.";return}
+b.disabled=true;b.textContent="Vérification…";e.textContent="";
+fetch(API+"?action=activate&code="+encodeURIComponent(v)+"&device="+encodeURIComponent(dev())).then(function(r){return r.json()}).then(function(j){if(j.ok){S.pro=true;sv();try{localStorage.setItem("eh_code",v)}catch(x){}b.textContent="Chargement…";fetchQ(function(){go("home")})}else{e.textContent=MSG[j.error]||"Code incorrect.";b.disabled=false;b.textContent="Activer mon accès"}}).catch(function(){e.textContent="Pas de connexion internet. Réessaie.";b.disabled=false;b.textContent="Activer mon accès"})}
+function hdr(back){return '<div class="top">'+(back?'<button class="back" onclick="go(\''+back+'\')">← Retour</button>':'<div class="brand"><span class="flag"></span>Réussite Examens</div>')+(S.pro?'<span class="pill">Accès complet</span>':'')+'</div>'}
+function draw(){var h="",A=document.getElementById("app");
+if(S.v==="home"){
+h=hdr()+'<div class="hero"><h1>Prépare ton examen officiel</h1><p>Quiz corrigés pour la 9e AF, la Rhéto et la Philo. Chaque réponse est expliquée.</p></div>';
+if(!S.pro)h+='<div class="promo"><b>Accès complet : '+PRICE+'</b><p class="sm">721 questions au lieu de 18, sur les 3 niveaux, avec toutes les explications.</p><button class="btn" onclick="go(\'pay\')">Débloquer tout</button></div>';
+Object.keys(L).forEach(function(k){var n=S.pro?tot(k):L[k].q.length,b=S.best[k];
+h+='<button class="lv" onclick="go(\'sub\',\''+k+'\')"><div class="row"><b>'+L[k].n+'</b><span class="sm mute">'+(b!=null?'Meilleur : '+b+' %':'Pas encore essayé')+'</span></div><p class="sm mute">'+L[k].d+'</p><p class="sm" style="margin-top:6px">'+n+' questions'+(S.pro?'':' gratuites · '+(tot(k)-L[k].q.length)+' verrouillées')+'</p><div class="bar"><i style="width:'+(b||0)+'%"></i></div></button>'});
+h+='<p class="sm mute" style="margin-top:16px">Contenu de révision basé sur le programme habituel. Vérifie toujours avec ton professeur et tes manuels.</p>'}
+else if(S.v==="quiz"){var q=S.list[S.i],d=S.a!==null;
+h=hdr("home")+'<div class="row"><span class="tag">'+L[S.k].n+' · '+q[0]+'</span><span class="tag">'+(S.i+1)+'/'+S.list.length+'</span></div><div class="bar"><i style="width:'+(S.i/S.list.length*100)+'%"></i></div><p class="q">'+q[1]+'</p>';
+q[2].forEach(function(o,j){var c=d?(j===q[3]?" ok":(j===S.a?" no":"")):"";h+='<button class="opt'+c+'" onclick="pick('+j+')">'+o+'</button>'});
+if(d)h+='<div class="exp"><b>'+(S.a===q[3]?'Bonne réponse.':'Pas tout à fait.')+'</b><p class="sm" style="margin-top:6px">'+q[4]+'</p></div><button class="btn" style="margin-top:14px" onclick="next()">'+(S.i+1<S.list.length?'Question suivante':'Voir mon résultat')+'</button>'}
+else if(S.v==="res"){var t=S.list.length,p=Math.round(S.sc/t*100);
+h=hdr("home")+'<h2>Résultat · '+L[S.k].n+'</h2><div class="score">'+S.sc+'/'+t+'</div><p class="mute">'+(p>=80?'Excellent travail. Tu es sur la bonne voie.':p>=50?'Bon début. Relis les explications et recommence.':'Continue, la régularité paie. Reprends le quiz demain.')+'</p>';
+if(!S.pro)h+='<div class="promo" style="margin-top:18px"><b>'+(tot(S.k)-L[S.k].q.length)+' questions t’attendent encore</b><p class="sm">Débloque les 3 niveaux pour '+PRICE+'.</p><button class="btn" onclick="go(\'pay\')">Débloquer tout</button></div>';
+h+='<div style="margin-top:18px"><button class="btn ghost" onclick="start(\''+S.k+'\',\''+S.s+'\')">Recommencer</button><button class="btn ghost" onclick="go(\'home\')">Choisir un autre niveau</button></div>'}
+else if(S.v==="sub"){var m=subs(S.k);h=hdr("home")+'<h2>'+L[S.k].n+'</h2><p class="mute" style="margin:6px 0 14px">Choisis une matière</p><button class="lv" onclick="start(\''+S.k+'\')"><b>Toutes les matières</b></button>';Object.keys(m).forEach(function(s){var o=m[s];h+='<button class="lv" onclick="start(\''+S.k+'\',\''+s+'\')"><div class="row"><b>'+s+'</b><span class="sm mute">'+(S.pro?o.t:o.f+' gratuites / '+o.t)+' questions</span></div></button>'})}
+else{h=hdr("home")+'<h2>Accès complet</h2><p class="mute" style="margin:6px 0 16px">'+PRICE+' · paiement une seule fois · 3 niveaux · 721 questions expliquées</p><div class="card"><h3>Comment payer</h3><ol class="sm"><li>Envoie '+PRICE+' par MonCash au '+MONCASH+' ou par NatCash au '+NATCASH+' (nom : '+NAME+').</li><li>Écris-nous sur WhatsApp avec la capture du paiement.</li><li>Reçois ton code et saisis-le ci-dessous.</li></ol><a class="btn red" href="https://wa.me/'+WA+'?text=Bonjour%2C%20j%E2%80%99ai%20pay%C3%A9%20pour%20l%E2%80%99acc%C3%A8s%20complet." target="_blank" rel="noopener">Envoyer ma preuve sur WhatsApp</a></div><div class="card"><h3>J’ai déjà un code</h3><input id="code" placeholder="Code d’accès" autocapitalize="characters" autocomplete="off"><p class="err" id="err"></p><button class="btn" id="go" onclick="unlock()">Activer mon accès</button></div>'}
+A.innerHTML=h}
+ld();ldq();draw();if(S.pro)fetchQ();
+</script>
+</body>
+</html>
